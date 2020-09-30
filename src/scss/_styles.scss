@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Spectral:wght@700');
+@import url('https://fonts.googleapis.com/css2?family=Scada');
+
+*{
+	box-sizing: border-box;
+}
+html{
+	font-size: 16px;
+	height: 100%;
+	color: #000;
+}
+body{
+	font-family: 'Scada', sans-serif;
+	min-height: 100%;
+    background-color: #E5E5E5;
+}
+
+.container{
+	margin: 0 auto;
+    max-width: 1170px;
+    height: 100%;
+	position: relative;
+	margin: 40px 80px;
+}
+
+.slider{
+	&-container{
+		max-width: 100%;
+		position: relative;
+		margin: auto;
+	}
+	&-item{
+		width: 100%;
+	}
+	&-nav{
+		position: absolute;
+		right: 0;
+		bottom: 80px;
+	}
+}
+
+.nav-prev, .nav-next{
+	display: inline-block;
+	width: 32px;
+	height: 16px;
+	cursor: pointer;
+	img{
+		max-width: 100%;
+		max-height: 100%;
+	}
+}
+
+.item-article{
+	padding: 8px 0;
+	border-bottom: 1px solid #92887E;
+}
+.item-img img{
+	width: 100%;
+}
+.article{
+	&-theme{
+		padding-bottom: 4px;
+	}
+	&-title{
+		font-family: 'Spectral';
+		font-weight: 700;
+		font-size: 2rem;
+		margin: 6px 0 6px 0;
+	}
+	&-data{
+		color: #92887E;
+	}
+}
+
+.fade{
+	-webkit-animation-name: fade;
+	-webkit-animation-duration:  1.5s;
+	animation-name: fade;
+	animation-duration: 1.5s;
+	opacity: 0;
+	transition: all 1.5s linear;
+}
+
+@-webkit-keyframes fade{
+	0%{opacity: 1}
+	50%{opacity: 0}
+}
+@keyframes fade{
+	0%{opacity: 1}
+	50%{opacity: 0}
+}
+
+.active{
+	-webkit-animation-name: active;
+	-webkit-animation-duration:  1.5s;
+	animation-name: active;
+	animation-duration: 1.5s;
+	opacity: 1;
+	transition: all 1.5s linear;
+}
+@-webkit-keyframes active{
+	from{opacity: 0}
+	to{opacity: 1;}
+}
+@keyframes active{
+	from{opacity: 0}
+	to{opacity: 1}
+}
