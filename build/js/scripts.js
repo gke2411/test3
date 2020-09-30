@@ -26,6 +26,7 @@ function plusSlides(m = 1){
 	showSlides(n);
 }
 
+window.addEventListener('touchstart', e => e.preventDefault(), { passive: false });
 $(".slider-item" ).on( "swipeleft", function (){
 	console.log("left");
 	plusSlides(-1);
