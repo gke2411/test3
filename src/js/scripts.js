@@ -26,6 +26,16 @@ function plusSlides(m = 1){
 	showSlides(n);
 }
 
+window.addEventListener('touchstart', e => e.preventDefault(), { passive: false });
+$(".slider-item" ).on( "swipeleft", function (){
+	console.log("left");
+	plusSlides(-1);
+} );
+$(".slider-item" ).on( "swiperight", function (){
+	console.log("right");
+	plusSlides(1);
+} );
+
 showSlides(slideIndex);
 
 var rotateSlider = setInterval(plusSlides, 8000)
