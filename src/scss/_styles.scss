@@ -11,32 +11,30 @@ html{
 }
 body{
 	font-family: 'Scada', sans-serif;
-	min-height: 100%;
+	height: 100%;
     background-color: #E5E5E5;
 }
 
-.container{
-	margin: 0 auto;
-    max-width: 1170px;
-    height: 100%;
-	position: relative;
-	margin: 40px 80px;
-}
-
 .slider{
+	max-width: 1170px;
+	height: 800px;
+	margin: 40px 40px;
 	&-container{
+		height: 100%;
 		max-width: 100%;
 		position: relative;
 		margin: auto;
+		overflow: hidden;
 	}
 	&-item{
 		width: 100%;
+		position: absolute;
 		touch-action: none;
 	}
 	&-nav{
 		position: absolute;
+		top: 600px;
 		right: 0;
-		bottom: 80px;
 	}
 }
 
@@ -50,15 +48,18 @@ body{
 		max-height: 100%;
 	}
 }
-
-.item-article{
-	padding: 8px 0;
-	border-bottom: 1px solid #92887E;
-}
-.item-img img{
-	width: 100%;
+.item{
+	&-article{
+		padding: 8px 0;
+		border-bottom: 1px solid #92887E;
+		opacity: .3;
+	}
+	&-img img{
+		width: 100%;
+	}
 }
 .article{
+	transition: all 1.5s ease;
 	&-theme{
 		padding-bottom: 4px;
 	}
@@ -73,37 +74,92 @@ body{
 	}
 }
 
-.fade{
-	-webkit-animation-name: fade;
+.fade-img{
+	-webkit-animation-name: fade-img;
 	-webkit-animation-duration:  1.5s;
-	animation-name: fade;
+	animation-name: fade-img;
 	animation-duration: 1.5s;
 	opacity: 0;
-	transition: all 1.5s linear;
 }
 
-@-webkit-keyframes fade{
+@-webkit-keyframes fade-img{
 	0%{opacity: 1}
 	50%{opacity: 0}
 }
-@keyframes fade{
+@keyframes fade-img{
 	0%{opacity: 1}
 	50%{opacity: 0}
 }
 
-.active{
-	-webkit-animation-name: active;
+.fade-article{
+	-webkit-animation-name: fade-article;
 	-webkit-animation-duration:  1.5s;
-	animation-name: active;
+	animation-name: fade-article;
+	animation-duration: 1.5s;
+	opacity: 0;
+}
+
+@-webkit-keyframes fade-article{
+	0%{opacity: 1}
+	50%{
+		opacity: 0;
+		transform: translate(0, -15%);
+	}
+}
+@keyframes fade-article{
+	0%{opacity: 1}
+	50%{
+		opacity: 0;
+		transform: translate(0, -15%);
+	}
+}
+
+.active-img{
+	-webkit-animation-name: active-img;
+	-webkit-animation-duration:  1.5s;
+	animation-name: active-img;
 	animation-duration: 1.5s;
 	opacity: 1;
-	transition: all 1.5s linear;
 }
-@-webkit-keyframes active{
+@-webkit-keyframes active-img{
 	from{opacity: 0}
 	to{opacity: 1;}
 }
-@keyframes active{
+@keyframes active-img{
 	from{opacity: 0}
 	to{opacity: 1}
+}
+
+.active-article{
+	-webkit-animation-name: active-article;
+	-webkit-animation-duration:  1.5s;
+	animation-name: active-article;
+	animation-duration: 1.5s;
+	opacity: 1;
+}
+@-webkit-keyframes active-article{
+	0%{
+		opacity: 0;
+		transform: translate(0, 40%);
+	}
+	50%{
+		opacity: 0;
+	}
+	100%{
+		opacity: 1;
+		transform: translate(0, 0);
+	}
+}
+@keyframes active-article{
+	0%{
+		opacity: 0;
+		transform: translate(0, 40%);
+	}
+	50%{
+		opacity: 0;
+	}
+	100%{
+		opacity: 1;
+		transform: translate(0, 0);
+	}
 }
